@@ -114,8 +114,11 @@
         <pointsize>18</pointsize>
        </font>
       </property>
+      <property name="inputMask">
+       <string>+48 999 999 999</string>
+      </property>
       <property name="maxLength">
-       <number>9</number>
+       <number>15</number>
       </property>
      </widget>
     </item>

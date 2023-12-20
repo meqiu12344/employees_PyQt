@@ -43,23 +43,7 @@ class Myform(QDialog):
             self.allert()
             return
 
-        suma = 0
-        wagi = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
-        for i in range(10):
-            x = wagi[i] * int(peselNumber[i])
-            suma += x
 
-        cyfraKontrolna = 0
-        suma = suma % 10
-        if suma == 0:
-            cyfraKontrolna = suma
-        else:
-            cyfraKontrolna = 10 - suma
-
-        if cyfraKontrolna != int(peselNumber[10]):
-            self.allert()
-        else:
-            self.isValid = True
 
     def saveToFile(self):
         self.validation()

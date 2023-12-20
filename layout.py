@@ -61,7 +61,7 @@ class Ui_Dialog(object):
         font = QtGui.QFont()
         font.setPointSize(18)
         self.PhoneValue.setFont(font)
-        self.PhoneValue.setMaxLength(9)
+        self.PhoneValue.setMaxLength(15)
         self.PhoneValue.setObjectName("PhoneValue")
         self.gridLayout.addWidget(self.PhoneValue, 2, 1, 1, 1)
         self.peselValue = QtWidgets.QLineEdit(parent=self.gridLayoutWidget)
@@ -108,6 +108,7 @@ class Ui_Dialog(object):
         self.label_3.setText(_translate("Dialog", "Numer telefonu"))
         self.label.setText(_translate("Dialog", "Imie"))
         self.saveButton.setText(_translate("Dialog", "Zapisz"))
+        self.PhoneValue.setInputMask(_translate("Dialog", "+48 999 999 999"))
         self.label_4.setText(_translate("Dialog", "PESEL"))
         self.typeCheckBox.setText(_translate("Dialog", "Umowa o prace"))
 
