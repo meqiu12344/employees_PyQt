@@ -43,6 +43,7 @@ class Myform(QDialog):
                 return
         else:
             self.allert()
+            return
 
         for i in range(11):
             x = wagi[i] * int(peselNumber[i])
