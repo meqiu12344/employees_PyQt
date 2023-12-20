@@ -24,8 +24,6 @@ class Myform(QDialog):
         alert.exec()
 
     def validation(self):
-        suma = 0
-        wagi = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
         name = self.ui.nameValue.text()
         secondName = self.ui.secondNameValue.text()
         phoneNumber = self.ui.PhoneValue.text()
@@ -45,13 +43,18 @@ class Myform(QDialog):
             self.allert()
             return
 
-        for i in range(11):
+        suma = 0
+        wagi = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
+        for i in range(10):
             x = wagi[i] * int(peselNumber[i])
             suma += x
-        if suma < 10:
+
+        cyfraKontrolna = 0
+        suma = suma % 10
+        if suma == 0:
             cyfraKontrolna = suma
         else:
-            cyfraKontrolna = suma % 10
+            cyfraKontrolna = 10 - suma
 
         if cyfraKontrolna != int(peselNumber[10]):
             self.allert()
