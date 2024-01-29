@@ -1,6 +1,10 @@
 class Employee:
 
+    next_id = 0
+
     def __init__(self, surname: str, name: str, phoneNumber: str, pesel: str):
+        self.id = self.next_id
+        self.next_id += 1
         self.name = name
         self.surname = surname
         self.phoneNumber = phoneNumber
