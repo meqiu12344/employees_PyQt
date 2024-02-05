@@ -8,6 +8,8 @@ from menu import Ui_Menu
 
 class MyForm(QDialog):
 
+
+
     def __init__(self):
         super().__init__()
         self.ui = Ui_Menu()
@@ -17,7 +19,7 @@ class MyForm(QDialog):
         self.employees = Employees()
 
     def add(self):
-        w = EmployeeAdd()
+        w = EmployeeAdd(self.employees)
         w.show()
         w.exec()
 
