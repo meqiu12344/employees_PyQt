@@ -1,3 +1,7 @@
+import json
+from typing import Any
+
+
 class Employee:
 
     next_id = 0
@@ -34,6 +38,16 @@ class Employee:
             return False
         else:
             return True
+
+
+class EmployeeEncoder(json.JSONEncoder):
+    def default(self, o: Employee) -> dict:
+        return {'id': o.id,
+                'name': o.name,
+                'surname': o.surname,
+                'pesel': o.pesel,
+                'phoneNumber': o.phoneNumber,
+                'contract': o.contract}
 
 
 
