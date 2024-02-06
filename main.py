@@ -9,9 +9,6 @@ from menu import Ui_Menu
 
 
 class MyForm(QDialog):
-
-
-
     def __init__(self):
         super().__init__()
         self.ui = Ui_Menu()
@@ -30,7 +27,11 @@ class MyForm(QDialog):
 
     def save(self):
         json_object = json.dumps(self.employees.list, cls=EmployeeEncoder)
+        with open('pracownicy.json', 'w') as f:
+            json.dump(json_object, f)
+
         print(json_object)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

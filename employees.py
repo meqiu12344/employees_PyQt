@@ -1,12 +1,26 @@
+import json
+
 from employee import Employee
 
 
 class Employees:
-
     def __init__(self):
         self.list = []
+        self.init_list()
+
+    def init_list(self):
+        with open('pracownicy.json', 'r') as file:
+            data = json.load(file)
+
+        # print(data)
+        new_data = json.loads(data)
+
+        for pracownik in new_data:
+            emp = Employee(pracownik['surname'], pracownik['name'], pracownik['phoneNumber'], pracownik['pesel'], pracownik['contract'])
+            self.add(emp)
 
     def add(self, emp: Employee):
+        print('cos')
         self.list.append(emp)
 
     def remove(self, emp: Employee):
