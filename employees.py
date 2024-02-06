@@ -25,3 +25,6 @@ class Employees:
                 result.append(emp)
 
         return result
+
+    def get_list(self) -> list:
+        return [e.__str__() for e in self.list]

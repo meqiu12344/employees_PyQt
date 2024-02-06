@@ -14,6 +14,9 @@ class Employee:
         else:
             raise ValueError
 
+    def __str__(self) -> str:
+        return f'{self.pesel}, {self.name} {self.surname}'
+
     def validatePesel(self, pesel: str):
         sum = 0
         weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]

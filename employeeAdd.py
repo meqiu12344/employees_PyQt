@@ -21,6 +21,7 @@ class EmployeeAdd(QDialog):
         try:
             emp = Employee(secondName, name, phone, pesel, contract)
             self.employees.add(emp)
+            self.close()
         except ValueError:
             messageBox = QMessageBox()
             messageBox.setText("Błędny numer pesel")

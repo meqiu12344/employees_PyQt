@@ -22,6 +22,8 @@ class MyForm(QDialog):
         w = EmployeeAdd(self.employees)
         w.show()
         w.exec()
+        self.ui.comboBox.clear()
+        self.ui.comboBox.addItems(self.employees.get_list())
 
 
 
