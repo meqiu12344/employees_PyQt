@@ -17,6 +17,7 @@ class MyForm(QDialog):
         self.ui.add.clicked.connect(self.add)
         self.ui.save.clicked.connect(self.save)
         self.employees = Employees()
+        self.ui.comboBox.addItems(self.employees.get_list())
 
     def add(self):
         w = EmployeeAdd(self.employees)
@@ -29,8 +30,6 @@ class MyForm(QDialog):
         json_object = json.dumps(self.employees.list, cls=EmployeeEncoder)
         with open('pracownicy.json', 'w') as f:
             json.dump(json_object, f)
-
-        print(json_object)
 
 
 if __name__ == '__main__':

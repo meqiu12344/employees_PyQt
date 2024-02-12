@@ -1,4 +1,5 @@
 import json
+from json import JSONDecodeError
 
 from employee import Employee
 
@@ -9,15 +10,18 @@ class Employees:
         self.init_list()
 
     def init_list(self):
-        with open('pracownicy.json', 'r') as file:
-            data = json.load(file)
+        try:
+            with open('pracownicy.json', 'r') as file:
+                data = json.load(file)
 
-        # print(data)
-        new_data = json.loads(data)
+            new_data = json.loads(data)
 
-        for pracownik in new_data:
-            emp = Employee(pracownik['surname'], pracownik['name'], pracownik['phoneNumber'], pracownik['pesel'], pracownik['contract'])
-            self.add(emp)
+            for pracownik in new_data:
+                emp = Employee(pracownik['surname'], pracownik['name'], pracownik['phoneNumber'], pracownik['pesel'], pracownik['contract'])
+                self.add(emp)
+                
+        except (FileNotFoundError, JSONDecodeError) as e:
+            return 0
 
     def add(self, emp: Employee):
         print('cos')
